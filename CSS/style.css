@@ -8,7 +8,8 @@
 body {
   width: 100%;
   height: 100%;
-  background-color: rgba(161, 161, 161, 0.141);
+  /* background-color: rgba(161, 161, 161, 0.141); */
+  background-color: white;
 }
 header {
   width: 100%;
@@ -94,7 +95,7 @@ nav ul li a:hover {
 
 @media (max-width: 920px) {
   header {
-    margin-bottom: 50px;
+    /* margin-bottom: 50px;    */
   }
   .search-bar {
     padding: 15px;
@@ -102,6 +103,7 @@ nav ul li a:hover {
     position: absolute;
     top: 70px;
     left: 0;
+    display: none;    /*  Temporary display none*/
   }
   .search-bar input {
     height: 45px;
@@ -149,11 +151,18 @@ nav ul li a:hover {
 main {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
 }
 .home-page {
   width: 100%;
   height: auto;
   display: flex;
+    background-color: rgba(161, 161, 161, 0.141);
+
 }
 .left {
   width: 50%;
@@ -259,7 +268,7 @@ main {
 
 @media (max-width: 750px) {
   header {
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
   }
   .home-page {
     height: auto;
@@ -300,7 +309,7 @@ main {
 
 /* Brands */
 .brands{
-  /* min-height: 100px; */
+  width: 100%;
   padding: 30px 0;
   overflow: hidden;
   background-color: black;
@@ -329,13 +338,209 @@ main {
 /* new Arrivals */
 .new-arrivals{
   width: 100%;
-  /* height: auto; */
-  height: 100vh;
-  margin-top: 50px;
+  height: auto;
+  padding: 50px 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.bottom-border{
+  width: 80%;
+  height: 1px;
+  background-color: grey;
 }
 .new-arrivals h3{
   font-size: 3vmax;
   font-weight: 900;
   text-align: center;
   text-transform: uppercase;
+}
+.arrivals-card-container{
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 25px;
+  padding: 60px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  width: 250px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  cursor: pointer;
+ transition: all 0.3s ease;
+}
+.card:hover{
+  transform: translateY(-2%);
+   border-radius: 5px;
+  /* box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+}
+
+.card .img-container{
+  width: 100%;
+  height: 250px;
+  /* background-color: rgb(203, 203, 203); */
+  border-radius: 10px;
+}
+.img-container img{
+  width: 100%;
+  height: 100%;
+}
+.card h4{
+  font-size: 15px;
+  font-weight: 500;
+}
+.rating span{
+  font-size: 10px;
+  color: grey;
+}
+.rating .checked{
+  color: orange;
+}
+#price{
+  font-size: 17px;
+}
+
+.view-all{
+  padding: 10px 75px;
+  border: 1px solid grey;
+  color: black;
+  background-color: transparent;
+  border-radius: 25px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+/* Dress style categories */
+
+.dress-style-categories{
+  width: 90%;
+  border-radius: 25px;
+  background-color: rgba(161, 161, 161, 0.141);
+  margin-bottom: 100px;
+  padding:  50px 70px;
+}
+.grid-layout{
+   display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+.grid-layout div{
+  height: 17vmax;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.grid-layout div:hover{
+  transform: translateY(-5%);
+box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+    
+.casual{
+  grid-column-start:1;
+  grid-column-end: 2;
+}
+.grid-layout img{
+  width: 100%;
+  height: 100%;
+}
+.formal{
+ 
+  grid-column-start:2;
+  grid-column-end: 4;
+}
+.party{
+  
+  grid-column-start:1;
+  grid-column-end: 3;
+}
+.gym{
+ 
+  grid-column-start:3;
+  grid-column-end: 4;
+}
+.dress-style-categories h3{
+  font-size: 3vmax;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 50px;
+}
+
+@media(max-width:950px){
+  .dress-style-categories{
+    width: 95%;
+  }
+}
+
+@media(max-width: 550px){
+  .dress-style-categories{
+    border-radius: 10px;
+  }
+  .grid-layout{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+.grid-layout div{
+  height: 170px;
+}
+.casual{
+  grid-row-start:1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.formal{
+  grid-row-start:2;
+  grid-row-end: 3;
+   grid-column-start: 1;
+  grid-column-end: 2;
+}
+.party{
+ 
+  grid-row-start:3;
+  grid-row-end: 4;
+   grid-column-start: 1;
+  grid-column-end: 2;
+}
+.gym{
+ grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start:4;
+  grid-row-end: 5;
+}
+}
+
+
+/* Comments  */
+
+.review-container{
+  width: 100%;
+  height: 100vh;
+  padding: 0 90px;
+}
+.review-container h3{
+   font-size: 3vmax;
+  font-weight: 900;
+  text-align: left;
+  text-transform: uppercase;
+}
+.reviews{
+  width: 100%;
+  /* height: 50px; */
+  /* background-color: red; */
 }
