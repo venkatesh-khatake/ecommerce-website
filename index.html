@@ -15,10 +15,11 @@
   </head>
   <body>
     <header>
-        <div class="hamburger">
+       
+      <div class="logo">
+         <div class="hamburger">
             <i class="fa-solid fa-bars"></i>
         </div>
-      <div class="logo">
         <img src="Images/SHOP.CO.png" alt="" />
       </div>
       <nav>
@@ -40,5 +41,18 @@
     </header>
     <main></main>
     <footer></footer>
+
+
+
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('nav');
+
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+    
   </body>
 </html>
