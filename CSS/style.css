@@ -36,7 +36,6 @@ header .logo img {
 }
 header nav {
   height: 100%;
-  /* position: relative; */
 }
 nav ul {
   height: 100%;
@@ -73,7 +72,7 @@ nav ul li a:hover {
 .search-bar input {
   background-color: rgb(223, 223, 223);
   width: 35vmax;
-  height: 40px;
+  height: 50px;
   border-radius: 25px;
   padding-left: 35px;
   border: none;
@@ -103,20 +102,16 @@ nav ul li a:hover {
     position: absolute;
     top: 70px;
     left: 0;
-
-    /* display: none; */
   }
   .search-bar input {
-    height: 50px;
+    height: 45px;
     width: 100%;
     padding-left: 40px;
-    /* border-radius: 0; */
   }
   .search-bar i {
     left: 25px;
   }
 }
-
 
 @media (max-width: 650px) {
   header {
@@ -157,8 +152,7 @@ main {
 }
 .home-page {
   width: 100%;
-  height: 90vh;
-  /* background-color: hotpink; */
+  height: auto;
   display: flex;
 }
 .left {
@@ -167,7 +161,6 @@ main {
   padding: 0 60px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
 }
 .left h1 {
@@ -177,6 +170,7 @@ main {
 }
 .left p {
   padding: 25px 0;
+  color: grey;
 }
 .left button {
   align-self: flex-start;
@@ -202,7 +196,6 @@ main {
   flex-wrap: wrap;
 }
 .network h2 {
-  /* line-height: 5px; */
   font-size: 2vw;
   font-weight: 200;
 }
@@ -218,21 +211,10 @@ main {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  /* border-right: 1px solid grey; */
-  /* background-color: red; */
+
   padding-right: 25px;
 }
 
-/* .right{
-    width: 50%;
-    height: 100%;
-    background-image: url(../Images/hero.png);
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    position: relative;
-} */
 .right {
   width: 50%;
   height: 100%;
@@ -260,59 +242,100 @@ main {
 }
 
 @media (max-width: 1100px) {
-    .left{
-        padding: 0 15px;
-    }
-    .left h1{
-        line-height: normal;
-    }
-  .network {
-    /* justify-content: center; */
+  .left {
+    padding: 0 15px;
   }
+  .left h1 {
+    line-height: normal;
+  }
+
   .product-count {
     border: none;
   }
-  
+  .network{
+    gap: 30px;
+  }
 }
 
-@media(max-width: 750px){
-    header{
-        margin-bottom: 80px;
-    }
-    .home-page{
-        height: auto;
-        flex-direction: column;
-    }
-    .left{
-        width: 100%;
-        height: 50%;
-        align-items: center;
-        justify-content: center;
-    }
-    .left button{
-      align-self: normal;
-    }
-    .left h1{
-        font-size: 8vw;
-        align-self: flex-start;
-    }
-    .network{
-      justify-content: center;
-      align-items: center;
-    }
-    .network h2{
-      font-size: 4vw;
-    }
-    .network p{
-      font-size: 2vw;
-    }
-    .right{
-        width: 100%;
-        height: 50%;
-    }
-    .right img{
-      width: 100%;
-      height: 100%;
-    }
+@media (max-width: 750px) {
+  header {
+    margin-bottom: 80px;
+  }
+  .home-page {
+    height: auto;
+    flex-direction: column;
+  }
+  .left {
+    width: 100%;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+  }
+  .left button {
+    align-self: normal;
+  }
+  .left h1 {
+    font-size: 8vw;
+    align-self: flex-start;
+  }
+  .network {
+    justify-content: center;
+    align-items: center;
+  }
+  .network h2 {
+    font-size: 4vw;
+  }
+  .network p {
+    font-size: 2vw;
+  }
+  .right {
+    width: 100%;
+    height: 50%;
+  }
+  .right img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
+/* Brands */
+.brands{
+  /* min-height: 100px; */
+  padding: 30px 0;
+  overflow: hidden;
+  background-color: black;
+  white-space: nowrap;
+}
+
+.brand-slide{
+  display: inline-block;
+  animation: 15s slide infinite linear;
+}
+.brand-slide img{
+  height: 35px;
+  margin: 0 40px;
+}
+
+@keyframes slide {
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
+
+
+/* new Arrivals */
+.new-arrivals{
+  width: 100%;
+  /* height: auto; */
+  height: 100vh;
+  margin-top: 50px;
+}
+.new-arrivals h3{
+  font-size: 3vmax;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+}
